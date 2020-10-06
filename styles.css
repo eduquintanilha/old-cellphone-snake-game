@@ -1,0 +1,53 @@
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+body, html {
+  height: 100%;
+  width: 100%;
+  background-color:#313c72;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.brand {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 5rem;
+
+  color: white;
+  font-size: 32px;
+  font-family: sans-serif;
+  font-weight: bolder;
+}
+.container {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;    
+  
+  border: 15px solid white;
+  border-radius: 30px;
+  padding: 0.5rem;  
+}
+.canvas-container {
+  display: flex;
+  justify-content: center;
+   
+}
+canvas {  
+  width: 400px;
+  height: 400px; 
+  border: 4px dashed #428f03; 
+}
+
+
