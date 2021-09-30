@@ -17,6 +17,7 @@ window.onload = function() {
   document.addEventListener("keydown", keyPush);
 
   // Speed of game refresh
+  var SPEED = 0;
   setInterval(game, 120);
   const speed = 1;
   var START_GAME = true;
@@ -56,6 +57,12 @@ window.onload = function() {
     ctx.fillStyle = "#9fd002";
     ctx.fillRect(0,0, screen.width, screen.height);
 
+    
+    setTimeout(function(){
+ 	// Draw snake food when appears
+    ctx.fillStyle = "black";
+    ctx.fillRect(foodPositionX*sizeSnakePart, foodPositionY*sizeSnakePart, sizeSnakePart+2, sizeSnakePart+2); 
+    }, 3000);//wait 2 seconds
     // Draw snake food
     ctx.fillStyle = "#1a3900";
     ctx.fillRect(foodPositionX*sizeSnakePart, foodPositionY*sizeSnakePart, sizeSnakePart, sizeSnakePart);
@@ -89,10 +96,11 @@ window.onload = function() {
       snakeTrail.shift();
     }
 
-    // If snake "eat" the food, increase the tail size and earn points
+    // If snake "eat" the food, increase the tail size, increase snake speed and earn points
     if (foodPositionX == snakePositionX && foodPositionY == snakePositionY) {
       snakeTailSize++;
       score+=10;
+      
       // Create new food randomic on screen
       foodPositionX = Math.floor(Math.random() * quantitySnakeParts);
       foodPositionY = Math.floor(Math.random() * quantitySnakeParts);
